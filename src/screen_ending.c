@@ -67,7 +67,7 @@ void DrawEndingScreen(void)
         DrawTextEx(font, TextFormat("YOU SURVIVED!\n\n Your Score: %d", score), (Vector2){ 20, 10 }, font.baseSize*3, 4, BLACK);
     } else {
         DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), ORANGE);
-        DrawTextEx(font, "YOU FAILED!\n\n Be Accurate and Calm", (Vector2){20, 10}, font.baseSize * 3, 4, BLACK);
+        DrawTextEx(font, "YOU FAILED TOO MUCH!\n\n Be (more) Accurate and (more) Calm", (Vector2){20, 10}, font.baseSize * 3, 4, BLACK);
     }
 
     DrawTextEx(font, "Assets:\n\tLetters by KENNEY\n\tEpic Song by BoxCat Games\n\tPoof Effect by jellyfizh", (Vector2){40, 300}, font.baseSize, 3, BLACK);

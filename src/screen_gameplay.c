@@ -127,7 +127,7 @@ void UpdateGameplayScreen(void)
             // Test for figures expired for long periods
             Note n = figure[i].note;
             double expiricyTime = songTime - (n.birth_time + n.lifetime);
-            if (expiricyTime > 15 && figure[i].despawningFrame < 1)
+            if (expiricyTime > 20 && figure[i].despawningFrame < 1)
             {
                 scoreGain = -20;
                 score += scoreGain;
@@ -141,14 +141,14 @@ void UpdateGameplayScreen(void)
                 if (figure[i].dead)
                 {
                     // TODO: Kill Score
-                    scoreGain = -1 - (int)expiricyTime;
+                    scoreGain = -1 - (int)expiricyTime*.8;
                 }
                 else
                 {
                     // TODO: add score
                     if (scoreGain > -.5)
                     {
-                        scoreGain = 2;
+                        scoreGain = 5;
                     } else {
                         scoreGain = 1;
                     }
@@ -181,7 +181,7 @@ void UpdateGameplayScreen(void)
     }
 
     // Ending Condition
-    if ((gaming && songTime / songLength >= 1) || score <= -10)
+    if ((gaming && songTime / songLength >= 1) || score <= -100)
     {
         finishScreen = 1;
         // for (int i = 0; i < figureLength; i++)
@@ -217,7 +217,7 @@ void DrawGameplayScreen(void)
     {
         DrawTextEx(
             font,
-            "INACURATE AND OVERWHELMING\nPress ENTER to START\n(audio warning!)",
+            "INACCURATE and OVERWHELMING\nPress ENTER to START\n(audio warning!)",
             (Vector2){100, GetScreenHeight() / 2},
             32, 1, BLACK);
     } else {

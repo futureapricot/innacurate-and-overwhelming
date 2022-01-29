@@ -64,7 +64,7 @@ void DrawTitleScreen(void)
     // TODO: Draw TITLE screen here!
     DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), RAYWHITE);
     DrawTextEx(font, "INSTRUCTIONS", (Vector2){ 20, 10 }, font.baseSize*3, 4, GRAY);
-    DrawTextEx(font, "Press the Key which will appear in the blue boxes\n\tbefore they turn yellow\n\t\tor you'll die", (Vector2){20, 60}, font.baseSize * 2, 4, BLACK);
+    DrawTextEx(font, "Press the Key which will appear in the blue boxes\n\tJUST BEFORE they turn yellow\n\t\tor you'll die", (Vector2){20, 60}, font.baseSize * 2, 4, BLACK);
     DrawText("PRESS ENTER to CONTINUE", 120, 320, 20, GRAY);
 }
 
