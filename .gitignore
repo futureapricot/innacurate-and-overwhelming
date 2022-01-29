@@ -1,3 +1,7 @@
+raylib_game*
+!raylib_game.c
+!lib/*
+
 # Prerequisites
 *.d
 

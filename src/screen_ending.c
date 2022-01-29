@@ -50,7 +50,7 @@ void UpdateEndingScreen(void)
     // TODO: Update ENDING screen variables here!
 
     // Press enter or tap to return to TITLE screen
-    if (IsKeyPressed(KEY_ENTER) || IsGestureDetected(GESTURE_TAP))
+    if (IsKeyPressed(KEY_ENTER))
     {
         finishScreen = 1;
         PlaySound(fxCoin);
@@ -61,9 +61,18 @@ void UpdateEndingScreen(void)
 void DrawEndingScreen(void)
 {
     // TODO: Draw ENDING screen here!
-    DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), BLUE);
-    DrawTextEx(font, "ENDING SCREEN", (Vector2){ 20, 10 }, font.baseSize*3, 4, DARKBLUE);
-    DrawText("PRESS ENTER or TAP to RETURN to TITLE SCREEN", 120, 220, 20, DARKBLUE);
+    if (score > 0)
+    {
+        DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), LIME);
+        DrawTextEx(font, TextFormat("YOU SURVIVED!\n\n Your Score: %d", score), (Vector2){ 20, 10 }, font.baseSize*3, 4, BLACK);
+    } else {
+        DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), ORANGE);
+        DrawTextEx(font, "YOU FAILED!\n\n Be Accurate and Calm", (Vector2){20, 10}, font.baseSize * 3, 4, BLACK);
+    }
+
+    DrawTextEx(font, "Assets:\n\tLetters by KENNEY\n\tEpic Song by BoxCat Games\n\tPoof Effect by jellyfizh", (Vector2){40, 300}, font.baseSize, 3, BLACK);
+
+    DrawText("PRESS ENTER to TRY AGAIN", 120, 420, 20, WHITE);
 }
 
 // Ending Screen Unload logic

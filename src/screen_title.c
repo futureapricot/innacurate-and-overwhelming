@@ -50,7 +50,7 @@ void UpdateTitleScreen(void)
     // TODO: Update TITLE screen variables here!
 
     // Press enter or tap to change to GAMEPLAY screen
-    if (IsKeyPressed(KEY_ENTER) || IsGestureDetected(GESTURE_TAP))
+    if (IsKeyPressed(KEY_ENTER))
     {
         //finishScreen = 1;   // OPTIONS
         finishScreen = 2;   // GAMEPLAY
@@ -62,9 +62,10 @@ void UpdateTitleScreen(void)
 void DrawTitleScreen(void)
 {
     // TODO: Draw TITLE screen here!
-    DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), GREEN);
-    DrawTextEx(font, "TITLE SCREEN", (Vector2){ 20, 10 }, font.baseSize*3, 4, DARKGREEN);
-    DrawText("PRESS ENTER or TAP to JUMP to GAMEPLAY SCREEN", 120, 220, 20, DARKGREEN);
+    DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), RAYWHITE);
+    DrawTextEx(font, "INSTRUCTIONS", (Vector2){ 20, 10 }, font.baseSize*3, 4, GRAY);
+    DrawTextEx(font, "Press the Key which will appear in the blue boxes\n\tbefore they turn yellow\n\t\tor you'll die", (Vector2){20, 60}, font.baseSize * 2, 4, BLACK);
+    DrawText("PRESS ENTER to CONTINUE", 120, 320, 20, GRAY);
 }
 
 // Title Screen Unload logic
